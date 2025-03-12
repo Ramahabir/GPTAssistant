@@ -13,12 +13,14 @@ while True:
     print(f"Command: {cmd}")
     print(f"Response: {resp}")
 
+    if cmd is None or resp is None:
+        print("Adinda didn’t understand that.")
+        continue  # Skip to the next loop iteration instead of crashing
+
     # execute command
     execute_command(cmd)
 
     # text_to_speech
     text_to_speech(resp)
 
-    if cmd == "stop":
-        break
 
